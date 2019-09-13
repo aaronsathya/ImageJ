@@ -1,0 +1,46 @@
+ID=getImageID();
+run("Set Scale...", "unit=pixel global");
+waitForUser("This Macro measures line intensity \n across line scan \n in multiple images. \n To proceed click OK");
+run("Clear Results");
+
+waitForUser("Select scan ROI using Line tool, then click OK");
+s = selectionType();
+
+if( s == -1 ) {
+    exit("There was no selection.");
+} else if( s != 5 ) {
+    exit("The selection wasn't a line selection.");
+} else {
+    getSelectionCoordinates(xPoints,yPoints);
+    x0 = xPoints[0];
+    y0 = yPoints[0];
+    x1 = xPoints[1];
+    y1 = yPoints[1];
+}
+
+selectImage(ID);
+
+if (nSlices<=1) {
+run("Images to Stack", "name=Line_Scan_Analysis title=[] use");
+}
+
+makeLine (x0,y0,x1,y1);
+
+for (i=1; i<=nSlices; i++) {
+         setSlice(i);
+         u=getInfo("slice.label");
+         profile = getProfile();
+         for (j=0; j<profile.length; j++)
+         setResult(u+"; line: "+x0+", "+y0+", "+x1+", "+y1, j, profile[j]);
+   }
+
+Overlay.drawLine(x0, y0, x1, y1);
+Overlay.drawString(x0+", "+y0+", "+x1+", "+y1, x1-60, y1-20);
+Overlay.show();
+
+updateResults();
+IJ.renameResults(u+"; line: "+x0+", "+y0+", "+x1+", "+y1);
+dir = getDirectory("choose where to save");
+saveAs(dir+u+".txt");
+selectImage("Line_Scan_Analysis");
+saveAs(dir+u+".tif");
