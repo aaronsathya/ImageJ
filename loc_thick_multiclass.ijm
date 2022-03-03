@@ -1,6 +1,6 @@
 // To run local thickness measurements (https://www.optinav.info/LocalThicknessEd.pdf)
 // on 2D files with multiple labels, each corresponding to a particular
-// segmentation class.
+// segmentation class i.e. each class has a distinct integer pixel value
 // Takes a while to run since local thickness measurements can be intensive 
 
 original = getImageID();
