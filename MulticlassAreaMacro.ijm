@@ -63,4 +63,4 @@ for (i=0; i<list_dir1.length; i++) {
 
 // Done!
   showMessage("5/5", "<html>"
-     +"<h1><font color=red><i>Done!</i></h1>");
+     +"<h1><font color=blue><i>Done!</i></h1>");
