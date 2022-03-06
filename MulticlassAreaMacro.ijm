@@ -8,18 +8,19 @@ run("Clear Results");
 
 // Dialog for mapping class label value
 // --Modify below based on number of classes and description--
-a1 = newArray("background", "EGL", "ML", "IGL", "WM");
 Dialog.create("Map pixel value to class label");
-Dialog.addString("class with pixel value = 0", a1[0]);
-Dialog.addString("class with pixel value = 1", a1[1]);
-Dialog.addString("class with pixel value = 2", a1[2]);
-Dialog.addString("class with pixel value = 3", a1[3]);
-Dialog.addString("class with pixel value = 4", a1[4]);
+Dialog.addString("class with pixel value = 0", "background");
+Dialog.addString("class with pixel value = 1", "EGL");
+Dialog.addString("class with pixel value = 2", "ML");
+Dialog.addString("class with pixel value = 3", "IGL");
+Dialog.addString("class with pixel value = 4", "WM");
 Dialog.show();
+c0 = Dialog.getString();
 c1 = Dialog.getString();;
 c2 = Dialog.getString();;;
 c3 = Dialog.getString();;;;
 c4 = Dialog.getString();;;;;
+a1 = newArray(c0, c1, c2, c3, c4);
 //--Modify above based on number of classes and description--
 
 // Dialog for selecting label-images folder and downsample factor
