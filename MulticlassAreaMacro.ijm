@@ -60,3 +60,7 @@ for (i=0; i<list_dir1.length; i++) {
 	selectImage(original);
 	close();
 }
+
+// Done!
+  showMessage("5/5", "<html>"
+     +"<h1><font color=red><i>Done!</i></h1>");
