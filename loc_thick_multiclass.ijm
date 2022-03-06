@@ -25,8 +25,8 @@ for (i=1; i <= max_val; i++) {
 	run("Local Thickness (complete process)", "threshold=255");
 	ID_temp1 = getImageID();
 	selectImage(ID_temp1);
-	run("Calibration Bar...", "location=[Upper Right] fill=White label=Black number=5 decimal=0 font=12 zoom=8 overlay");
 	saveAs("tif", pathtif + "_class_" + i);
+	run("Calibration Bar...", "location=[Upper Right] fill=White label=Black number=5 decimal=0 font=12 zoom=8 overlay");
 	saveAs("png", pathtif + "_class_" + i);
 	selectImage(ID_temp1);
 	close();
