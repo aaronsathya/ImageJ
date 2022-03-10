@@ -1,4 +1,4 @@
-// To run local thickness measurements (https://www.optinav.info/LocalThicknessEd.pdf)
+// To batch run local thickness measurements (https://www.optinav.info/LocalThicknessEd.pdf)
 // on 2D files with multiple labels, each corresponding to a particular
 // segmentation class.
 // Takes a while to run since local thickness measurements can be intensive 
