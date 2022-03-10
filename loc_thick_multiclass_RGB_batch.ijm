@@ -1,7 +1,13 @@
-// To run local thickness measurements (https://www.optinav.info/LocalThicknessEd.pdf)
-// on 2D files with multiple labels, each corresponding to a particular
-// segmentation class.
-// Takes a while to run since local thickness measurements can be intensive 
+// IMPORTANT: BEFORE running this macro, please install class_x_RGB_threshold.ijm macros 
+// where (x = class number), into the macros folder in the ImageJ/Fiji folder
+
+// This imageJ macro measures local thickness(https://www.optinav.info/LocalThicknessEd.pdf) 
+// on a multiclass 2D RGB image. It is assumed that the images have classes labeled and 
+// that each class has a distinct RGB value. It is also assumed that there are 5 classes
+// including background (dark blue), EGL (light blue), ML (green),
+// IGL (orange), and WM (strong red). Individual class RGB threshold macros
+// have been tuned to these colors. Adjust these to fit your particular colors.
+// Takes a while to run since local thickness measurements can be intensive. 
 
 close("*");
 run("Clear Results");
