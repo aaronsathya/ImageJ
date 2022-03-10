@@ -50,26 +50,27 @@ for (i=0; i<list_dir1.length; i++) {
 	// calculate local thickness for each class
 	// save thickness images for each class in same folder as original image
 	max_val = getValue("Max");
-	for (i=1; i <= max_val; i++) {
+	for (n=1; n <= max_val; n++) {
 		selectImage(ID);
 		run("Duplicate...", "temp.png");
 		ID_temp = getImageID();
 		selectImage(ID_temp);
-		setThreshold(i, i); //select the class
+		setThreshold(n, n); //select the class
 		setOption("BlackBackground", false);
 		run("Convert to Mask");
 		run("Local Thickness (complete process)", "threshold=255");
 		ID_temp1 = getImageID();
 		selectImage(ID_temp1);
 		run("Calibration Bar...", "location=[Upper Right] fill=White label=Black number=5 decimal=0 font=12 zoom=8 overlay");
-		saveAs("tif", pathtif + "_class_" + a1[i]);
-		saveAs("png", pathtif + "_class_" + a1[i]);
+		saveAs("tif", pathtif + "_class_" + a1[n]);
+		saveAs("png", pathtif + "_class_" + a1[n]);
 		selectImage(ID_temp1);
 		close();
 		selectImage(ID_temp);
 		close();
 	}
 	close("source_labels.png");
+	close(original);
 }
 
 // Done!
