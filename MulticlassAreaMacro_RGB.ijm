@@ -1,4 +1,4 @@
-// IMPORTANT: BEFORE running this macro, please install class_x_RGB_threshold.ijm macros 
+// IMPORTANT: BEFORE running this macro, please copy class_x_RGB_threshold.ijm macros 
 // where (x = class number), into the macros folder in the ImageJ/Fiji folder
 
 // This imageJ macro measures area of class labels from a multiclass image
